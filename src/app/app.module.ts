@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoFormComponent } from './components/todo-form.component';
 import { MaterialModule } from './material.module'
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { MaterialModule } from './material.module'
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    MatMomentDateModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

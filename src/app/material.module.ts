@@ -4,9 +4,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
-const MATERIAL = [MatButtonModule,MatRadioModule,MatDatepickerModule,MatInputModule,MatDividerModule,MatFormFieldModule]
+
+
+const MATERIAL = [MatButtonModule,MatRadioModule,MatDatepickerModule,MatInputModule,MatDividerModule,MatFormFieldModule, MatToolbarModule, MatIconModule, MatCardModule, MatListModule]
 
 @NgModule({
     imports: [MATERIAL],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
+
 
 @Component({
   selector: 'app-todo-form',
@@ -9,17 +10,33 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class TodoFormComponent implements OnInit {
 
   todoForm = this.fb.group({
-    description: [''],
-    priority: [''],
-    due: [''] 
+    description: ['', Validators.required],
+    priority: ['', Validators.required],
+    due: ['', Validators.required] 
   })
 
-  constructor(private fb: FormBuilder) { }
+  todoArray: FormArray = this.fb.array([
+    
+  ])
+
+  todos;
+
+  minDate: Date;
+
+  constructor(private fb: FormBuilder) { 
+    this.minDate = new Date();
+    console.log(this.todoForm)
+    this.todos = [];
+  }
 
   ngOnInit(): void {
   }
 
   addTodo() {
-    console.log("todo submitted")
+    console.log(this.todoForm.value)
+    this.todos.push(this.todoForm.value)
+    this.todoForm.reset();
+    this.todoArray.push(this.fb.control(''))
+    
   }
 }
