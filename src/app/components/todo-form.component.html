@@ -1,0 +1,15 @@
+<form [formGroup]="todoForm" (ngSubmit)="addTodo()">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-radio-group aria-label="Priority" formControlName="priority">
+            <mat-radio-button value="1">High &nbsp;</mat-radio-button>
+            <mat-radio-button value="2">Medium &nbsp;</mat-radio-button>
+            <mat-radio-button value="3">Low &nbsp;</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</form>
