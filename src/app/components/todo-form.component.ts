@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormArray } from '@angular/forms';
-
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-todo-form',
@@ -9,34 +9,34 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 })
 export class TodoFormComponent implements OnInit {
 
+  @Output() updateTasks = new EventEmitter();
   todoForm = this.fb.group({
     description: ['', Validators.required],
     priority: ['', Validators.required],
     due: ['', Validators.required] 
   })
 
-  todoArray: FormArray = this.fb.array([
-    
-  ])
-
-  todos;
-
   minDate: Date;
 
   constructor(private fb: FormBuilder) { 
     this.minDate = new Date();
     console.log(this.todoForm)
-    this.todos = [];
   }
 
   ngOnInit(): void {
+  
   }
 
-  addTodo() {
-    console.log(this.todoForm.value)
-    this.todos.push(this.todoForm.value)
+  addTodo(formDirective) {
+    let taskId = uuidv4();
+    let singleTask = this.todoForm.value;
+    //add key and status
+    singleTask.taskId = taskId;
+    singleTask.done = false;
+    this.updateTasks.next(singleTask);
     this.todoForm.reset();
-    this.todoArray.push(this.fb.control(''))
-    
+    console.log(this.todoForm)
+    //Set errors of each individual control in the todoForm back to null
+    formDirective.resetForm();
   }
 }

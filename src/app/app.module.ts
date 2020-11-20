@@ -4,15 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoFormComponent } from './components/todo-form.component';
-import { MaterialModule } from './material.module'
+import { MaterialModule } from './modules/material.module'
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { TasksComponent } from './components/tasks.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    MatMomentDateModule
+    MatMomentDateModule,
     
   ],
   providers: [],

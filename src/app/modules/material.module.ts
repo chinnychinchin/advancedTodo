@@ -9,10 +9,12 @@ import { NgModule } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
-const MATERIAL = [MatButtonModule,MatRadioModule,MatDatepickerModule,MatInputModule,MatDividerModule,MatFormFieldModule, MatToolbarModule, MatIconModule, MatCardModule, MatListModule]
+
+const MATERIAL = [MatButtonModule,MatRadioModule,MatDatepickerModule,MatInputModule,MatDividerModule,MatFormFieldModule, MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatCheckboxModule]
 
 @NgModule({
     imports: [MATERIAL],

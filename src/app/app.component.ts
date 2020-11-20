@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'advancedTodo';
+
+  tasks = [];
+
+  updateTasks($event) {
+    this.tasks.push($event);
+    
+  }
+
+  changeTaskStatus($event){
+    const index = this.tasks.findIndex(task => task.taskId == $event.id);
+    this.tasks[index].done = $event.checked;
+  }
+
 }

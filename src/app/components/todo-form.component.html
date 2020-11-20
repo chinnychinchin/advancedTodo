@@ -2,7 +2,7 @@
    <span>TooDoO</span>
  </mat-toolbar>
 
-<form [formGroup]="todoForm" (ngSubmit)="addTodo()">
+<form [formGroup]="todoForm" (ngSubmit)="addTodo(formDirective)" #formDirective="ngForm">
     <mat-card>
         <mat-card-content>	
             <mat-form-field appearance="fill">
@@ -35,14 +35,3 @@
 
 <mat-divider></mat-divider>
 
-<mat-card>
-    <mat-list *ngFor="let todo of todoArray.controls; let i=index" [formGroup]="todoArray">
-        <mat-list-item>
-            <p matLine> {{todos[i].description}}</p>
-            <p matLine>{{todos[i].due}}</p>
-
-            
-        </mat-list-item>
-    </mat-list>
-
-</mat-card>
