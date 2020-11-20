@@ -35,7 +35,6 @@ export class TodoFormComponent implements OnInit {
     singleTask.done = false;
     this.updateTasks.next(singleTask);
     this.todoForm.reset();
-    console.log(this.todoForm)
     //Set errors of each individual control in the todoForm back to null
     formDirective.resetForm();
   }

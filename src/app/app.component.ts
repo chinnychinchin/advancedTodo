@@ -12,7 +12,9 @@ export class AppComponent {
 
   updateTasks($event) {
     this.tasks.push($event);
-    
+    localStorage.setItem($event.taskId,$event);
+    console.log(localStorage)
+
   }
 
   changeTaskStatus($event){
