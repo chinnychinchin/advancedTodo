@@ -20,7 +20,6 @@ export class TodoFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { 
     this.minDate = new Date();
-    console.log(this.todoForm)
   }
 
   ngOnInit(): void {

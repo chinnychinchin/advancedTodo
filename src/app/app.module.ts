@@ -7,6 +7,7 @@ import { TodoFormComponent } from './components/todo-form.component';
 import { MaterialModule } from './modules/material.module'
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { TasksComponent } from './components/tasks.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -23,6 +24,7 @@ import { TasksComponent } from './components/tasks.component';
     ReactiveFormsModule,
     MaterialModule,
     MatMomentDateModule,
+    FlexLayoutModule
     
   ],
   providers: [],
