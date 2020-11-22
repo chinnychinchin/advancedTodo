@@ -1,10 +1,7 @@
-
-
-    <mat-card>
-        <mat-list>
-            <mat-list-item *ngFor="let task of tasks">
-                <mat-checkbox [ngClass]="{'strike-off': task.done}" [checked]="task.done" [id]="task.taskId" (change)="updateStatus($event)">{{task.description}} ---- Due: {{task.due}}</mat-checkbox>
-            </mat-list-item>
-        </mat-list>
-
-    </mat-card>
+<mat-card>
+    <mat-list>
+        <mat-list-item *ngFor="let task of tasks">
+            <mat-checkbox [ngClass]="{'strike-off': task.done}" [checked]="task.done" [id]="task.taskId" (change)="updateStatus($event)">{{task.description}} ---- <code>{{task.due}}</code></mat-checkbox>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

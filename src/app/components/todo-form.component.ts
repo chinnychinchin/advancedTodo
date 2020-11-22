@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
+import * as _moment from 'moment';
 
 @Component({
   selector: 'app-todo-form',
@@ -19,7 +20,8 @@ export class TodoFormComponent implements OnInit {
   minDate: Date;
 
   constructor(private fb: FormBuilder) { 
-    this.minDate = new Date();
+    this.minDate = new Date()
+    console.log(this.minDate)
   }
 
   ngOnInit(): void {
@@ -32,6 +34,9 @@ export class TodoFormComponent implements OnInit {
     //add key and status
     singleTask.taskId = taskId;
     singleTask.done = false;
+    //change the value of the due property to type 'MMM DD, YYYY'
+    console.log(singleTask.due)
+    singleTask.due = singleTask.due.format('ll')
     this.updateTasks.next(singleTask);
     this.todoForm.reset();
     //Set errors of each individual control in the todoForm back to null

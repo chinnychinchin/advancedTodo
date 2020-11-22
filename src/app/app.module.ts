@@ -11,6 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     MaterialModule,
     MatMomentDateModule,
-    FlexLayoutModule
-    
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
